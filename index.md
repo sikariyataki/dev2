@@ -1,1 +1,2 @@
-# Welcome Folks!
+# PinoyDev.org initialized...
+We're making things that every Filipino around the world would benefit it for FREE.
