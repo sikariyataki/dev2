@@ -17,8 +17,8 @@ client.add(torrentId, function (torrent) {
   })
   file.appendTo('body', function(err, el) {
 	el.className = 'video-js vjs-default-skin vjs-big-play-centered';
-	el.width = '640';
-	el.height = '360';
+	el.width = '100%';
+	el.height = '100%';
 	videojs(el);
   });
 });
