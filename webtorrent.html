@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>webtorrent@videojs</title>
+	<script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.2.0/video.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.2.0/video-js.min.css" rel="stylesheet"/>
+</head>
+<body style="margin:0;background:black" oncontextmenu="return false;">
+<script>
+var torrentId = 'https://webtorrent.io/torrents/sintel.torrent';
+var client = new WebTorrent();
+client.add(torrentId, function (torrent) {
+	torrent.files[0].appendTo('body');
+	/*
+    torrent.files[0].appendTo('body', function(err, el) {
+		el.className = 'video-js vjs-default-skin vjs-big-play-centered';
+		el.width = '100%';
+		el.height = '100%';
+		videojs(el);
+	});*/
+});
+</script>
+</body>
