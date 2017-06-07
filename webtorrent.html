@@ -8,19 +8,17 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.2.0/video-js.min.css" rel="stylesheet"/>
 </head>
 <body style="margin:0;background:black" oncontextmenu="return false;">
+<div id="player" style="width:100%;height:100%">
+	<video id="video" class="video-js vjs-16-9 vjs-default-skin vjs-big-play-centered"></video>
+</div>
 <script>
 var client = new WebTorrent()
-var torrentId = 'magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fsintel.torrent'
+var torrentId = 'https://webtorrent.io/torrents/sintel.torrent';
 client.add(torrentId, function (torrent) {
   var file = torrent.files.find(function (file) {
     return file.name.endsWith('.mp4')
   })
-  file.appendTo('body', function(err, el) {
-	el.className = 'video-js vjs-default-skin vjs-big-play-centered';
-	el.width = '100%';
-	el.height = '100%';
-	videojs(el);
-  });
+  file.appendTo('body');
 });
 </script>
 </body>
