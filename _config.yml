@@ -1,8 +1,4 @@
 theme: jekyll-theme-minimal
 title: pinoy developers page
 description: gumagawa ng libre para sa taong bayan ng pilipinas
----
-layout: default
 comments: true
-# other options
----
